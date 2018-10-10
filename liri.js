@@ -5,7 +5,7 @@ var Spotify = require("node-spotify-api");
 var keys = require("./keys.js");
 var fs = require("fs");
 var command = process.argv[2];
-var input = process.argv.slice(3);
+var input = process.argv.slice(3).join(" ");
 var spotify = new Spotify(keys.spotify);
 
 function movieThis(input){
@@ -104,6 +104,14 @@ function doThis(){
     })
 }
 
+function logData(){
+    fs.appendFile("log.txt", command + ", " + input + "\n", function(error){
+        if(error){
+            return console.log(error);
+        }
+    })
+}
+
 function switchStatement(command, input){
     switch(command){
         case "movie-this":
@@ -118,7 +126,11 @@ function switchStatement(command, input){
         case "do-what-it-says":
             doThis();
             break;
+        default: 
+            console.log("Please enter a correct command!");
+            break;
     }
 }
 
 switchStatement(command, input);
+logData();
