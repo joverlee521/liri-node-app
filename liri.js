@@ -3,18 +3,20 @@ var request = require("request");
 var moment = require("moment");
 var Spotify = require("node-spotify-api");
 var keys = require("./keys.js");
+var fs = require("fs");
 var command = process.argv[2];
+var input = process.argv.slice(3);
 var spotify = new Spotify(keys.spotify);
 
-function movieThis(){
+function movieThis(input){
     var movieName = "Mr. Nobody";
-    if(process.argv[3]){
-        movieName = process.argv.slice(3);
+    if(input.length > 0){
+        movieName = input;
     }
     var queryURL = "http://www.omdbapi.com/?type=movie&t=" + movieName + "&apikey=trilogy";
     request(queryURL, function(error, response, body){
         if(error){
-            console.log(error);
+            return console.log(error);
         }
         else if(!error && response.statusCode === 200){
             var movie = JSON.parse(body);
@@ -30,16 +32,16 @@ function movieThis(){
     })
 }
 
-function concertThis(){
+function concertThis(input){
     if(!process.argv[3]){
         console.log("Please enter an artist or band name!");
     }
     else{
-        var artist = process.argv.slice(3);
+        var artist = input;
         var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
         request(queryURL, function(error, response, body){
             if(error){
-                console.log(error);
+                return console.log(error);
             }
             else if(!error && response.statusCode === 200){
                 var events = JSON.parse(body);
@@ -61,14 +63,14 @@ function concertThis(){
     }
 }
 
-function spotifyThis(){
+function spotifyThis(input){
     var song = "The Sign";
-    if(process.argv[3]){
-        song = process.argv.slice(3);
+    if(input.length > 0){
+        song = input;
     }
     spotify.search({type: "track", query: song, limit: 10}, function(error, data){
         if(error){
-            console.log(error);
+            return console.log(error);
         }
         else{
             var songInfo = data.tracks.items;
@@ -88,14 +90,35 @@ function spotifyThis(){
     })
 }
 
-switch(command){
-    case "movie-this":
-        movieThis();
-        break;
-    case "concert-this":
-        concertThis();
-        break;
-    case "spotify-this-song":
-        spotifyThis();
-        break;
+function doThis(){
+    fs.readFile("random.txt", "utf8", function(error, data){
+        if(error){
+            return console.log(error);
+        }
+        else{
+            var dataArray = data.split(",");
+            var newCommand = dataArray[0];
+            var newInput = dataArray[1];
+            switchStatement(newCommand, newInput);
+        }
+    })
 }
+
+function switchStatement(command, input){
+    switch(command){
+        case "movie-this":
+            movieThis(input);
+            break;
+        case "concert-this":
+            concertThis(input);
+            break;
+        case "spotify-this-song":
+            spotifyThis(input);
+            break;
+        case "do-what-it-says":
+            doThis();
+            break;
+    }
+}
+
+switchStatement(command, input);
