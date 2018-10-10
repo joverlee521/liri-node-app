@@ -1,6 +1,10 @@
+require("dotenv").config();
 var request = require("request");
 var moment = require("moment");
+var Spotify = require("node-spotify-api");
+var keys = require("./keys.js");
 var command = process.argv[2];
+var spotify = new Spotify(keys.spotify);
 
 function movieThis(){
     var movieName = "Mr. Nobody";
@@ -57,11 +61,41 @@ function concertThis(){
     }
 }
 
+function spotifyThis(){
+    var song = "The Sign";
+    if(process.argv[3]){
+        song = process.argv.slice(3);
+    }
+    spotify.search({type: "track", query: song, limit: 10}, function(error, data){
+        if(error){
+            console.log(error);
+        }
+        else{
+            var songInfo = data.tracks.items;
+            for(var i = 0; i < songInfo.length; i++){
+                console.log("Artist: " + songInfo[i].artists[0].name);
+                console.log("Song Title: " + songInfo[i].name);
+                if(songInfo[i].preview_url !== null){
+                    console.log("Preview URL: " + songInfo[i].preview_url);
+                }
+                else{
+                    console.log("Preview URL not available");
+                }
+                console.log("Album Title: " + songInfo[i].album.name);
+                console.log("--------------------------------------------------------------------------------------");
+            }
+        }
+    })
+}
+
 switch(command){
     case "movie-this":
         movieThis();
         break;
     case "concert-this":
         concertThis();
+        break;
+    case "spotify-this-song":
+        spotifyThis();
         break;
 }
