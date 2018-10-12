@@ -1,9 +1,9 @@
 # LIRI App
 
-### About LIRI
+## About LIRI
 LIRI stands for Language Interpretation and Recognition Interface. It is a command line Node app that takes in certain parameters and returns data to the user.
 
-### How To Use LIRI
+## How To Use LIRI
 Navigate to the root of the LIRI app in your terminal and type in one of four commands:
 1. `node liri.js concert-this <artist/band name here>`
 
@@ -27,3 +27,11 @@ Navigate to the root of the LIRI app in your terminal and type in one of four co
 
     * The app will read the file [random.txt](../master/random.txt) and run the command that written within the file
     
+## Technologies Used
+* JavaScript, Node.js
+* [OMDb API](http://www.omdbapi.com/)
+* [Bandsintown API](http://www.artists.bandsintown.com/bandsintown-api)
+* [Request](https://www.npmjs.com/package/request)
+* [Node Spotify API](https://www.npmjs.com/package/node-spotify-api)
+* [Moment](https://www.npmjs.com/package/moment)
+* [Dotenv](https://www.npmjs.com/package/dotenv)
