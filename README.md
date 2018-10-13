@@ -24,6 +24,7 @@ Navigate to the root of the LIRI app in your terminal and type in one of four co
     * The app will utilize the node-spotify-api to search for the song specified
     * If there is no song title input, the app will default to searching the song "The Sign"
     * It will return the artist, song title, a preview link from Spotify, and the album that the song is from
+    ![spotify-this-song](../master/images/spotify-this-song.png)
         
 1. `node liri.js do-what-it-says`
 
