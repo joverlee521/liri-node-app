@@ -60,7 +60,7 @@ function concertThis(input){
         var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
         request(queryURL, function(error, response, body){
             if(error){
-                return console.log(error);
+                console.log(error);
             }
             // Return the data when there is no error and the request was successful
             else if(!error && response.statusCode === 200){
