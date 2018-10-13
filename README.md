@@ -10,6 +10,7 @@ Navigate to the root of the LIRI app in your terminal and type in one of four co
     * The app will search the Bandsintown API for upcoming events related to the artist specified 
     * It will return the name of the venue, the venue location, and the date of the event 
     * There is no limit on the number of events returned, the data returned is completely based on the artist searched
+    ![concert-this screenshot](../master/images/concert-this.png)
         
 1. `node liri.js movie-this <movie name here>`
 
