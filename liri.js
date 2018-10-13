@@ -143,6 +143,8 @@ function doThis(){
             var dataArray = data.split(",");
             var newCommand = dataArray[0];
             var newInput = dataArray[1];
+            logCommand(newCommand, newInput);
+            console.log("Do this: " + newCommand + ", " + newInput + "\n");
             // Calls on the switchStatement using the data from the file
             switchStatement(newCommand, newInput);
         }
@@ -150,7 +152,7 @@ function doThis(){
 }
 
 // Log Command function
-function logCommand(){
+function logCommand(command, input){
     // Appends each new command and input into log.txt file
     fs.appendFile("log.txt", "\n" + command + ", " + input + "\n" + separator + "\n", function(error){
         if(error){
@@ -192,4 +194,4 @@ function switchStatement(command, input){
 }
 
 switchStatement(command, input);
-logCommand();
+logCommand(command, input);
