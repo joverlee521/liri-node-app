@@ -17,6 +17,7 @@ Navigate to the root of the LIRI app in your terminal and type in one of four co
     * The app will search the OMDb API for the movie specified
     * If there is no movie name input, the app will default to searching the movie "Mr. Nobody"
     * It will return many details about the movie as shown below: 
+    ![movie-this screenshot](../master/images/movie-this.png)
         
 1. `node liri.js spotify-this-song <song title here>`
 
