@@ -55,6 +55,14 @@ LIRI stands for Language Interpretation and Recognition Interface. It is a comma
 1. When you are done with the first command, LIRI will ask "Would you like to use another command?":
 
     ![restart prompt screenshot](../master/images/restart-prompt.png)
+
+    * Answer "Y" to continue using the app:
+
+        ![restart yes screenshot](../master/images/restart-yes.png)
+
+    * Answer "N" to exit the app:
+
+        ![restart no screenshot](../master/images/restart-no.png)
     
 ## Technologies Used
 * JavaScript, Node.js
