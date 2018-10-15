@@ -285,3 +285,14 @@ Song Title: Bye Bye Bye / I Want It That Way (Glee Cast Version)
 Preview URL: https://p.scdn.co/mp3-preview/3aa63b5c98b98ae333e567813e5c720abb2914f0?cid=0ccac873f49044fb9f82c2d3d3c62a70
 Album Title: Bye Bye Bye / I Want It That Way (Glee Cast Version)
 ---------------------------------------
+
+movie-this, Lion King
+---------------------------------------
+Title: The Lion King
+Year: 1994
+IMDB Rating: 8.5
+Rotten Tomatoes Rating: 93%
+Country: USA
+Language: English, Swahili, Xhosa, Zulu
+Plot: A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.
+Actors: Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings

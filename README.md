@@ -51,7 +51,10 @@ LIRI stands for Language Interpretation and Recognition Interface. It is a comma
     * Choose `do-what-it-says` to run the command that is written in the file [random.txt](../master/random.txt):
 
         ![do-what-it-says screenshot](../master/images/do-what-it-says.png)
-        
+
+1. When you are done with the first command, LIRI will ask "Would you like to use another command?":
+
+    ![restart prompt screenshot](../master/images/restart-prompt.png)
     
 ## Technologies Used
 * JavaScript, Node.js
