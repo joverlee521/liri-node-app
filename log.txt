@@ -59,3 +59,173 @@ Venue: T-Mobile Arena
 Venue Location: Las Vegas, NV, United States
 Date of Event: 12/31/2018
 ---------------------------------------
+
+movie-this, 
+---------------------------------------
+Title: Mr. Nobody
+Year: 2009
+IMDB Rating: 7.9
+Rotten Tomatoes Rating: 67%
+Country: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+
+spotify-this-song, Bang
+---------------------------------------
+Artist: Trippie Redd
+Song Title: BANG!
+Preview URL not available
+Album Title: LIFE'S A TRIP
+---------------------------------------
+Artist: Jessie J
+Song Title: Bang Bang
+Preview URL not available
+Album Title: Sweet Talker (Deluxe Version)
+---------------------------------------
+Artist: Jessie J
+Song Title: Bang Bang
+Preview URL not available
+Album Title: My Everything (Deluxe)
+---------------------------------------
+Artist: BIGBANG
+Song Title: BANG BANG BANG
+Preview URL: https://p.scdn.co/mp3-preview/388c428bd3a237c3839bf78e16a2e099d2db5d9e?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: MADE
+---------------------------------------
+Artist: David Lee Murphy
+Song Title: Dust On The Bottle
+Preview URL not available
+Album Title: Out With A Bang
+---------------------------------------
+Artist: Green Day
+Song Title: Bang Bang
+Preview URL: https://p.scdn.co/mp3-preview/63e890a84fc2cdb2ae99d0be3a7bd471265e8ec4?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Revolution Radio
+---------------------------------------
+Artist: Pnau
+Song Title: Go Bang
+Preview URL not available
+Album Title: Go Bang
+---------------------------------------
+Artist: Dispatch
+Song Title: Bang Bang
+Preview URL: https://p.scdn.co/mp3-preview/4c99fe69236eb91f44da08e9acbeb84fa28fa6d0?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Bang Bang
+---------------------------------------
+Artist: ELHAE
+Song Title: Bang Your Line (feat. Ty Dolla $ign)
+Preview URL: https://p.scdn.co/mp3-preview/1ca93acc7e74b9efe0c02aae56698737d7f4f783?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: AURA II EP
+---------------------------------------
+Artist: Quiet Riot
+Song Title: Metal Health (Bang Your Head)
+Preview URL: https://p.scdn.co/mp3-preview/796bfd262a59ff8e73b019f7c0fd290b5073f84b?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Metal Health
+---------------------------------------
+
+spotify-this-song, 
+---------------------------------------
+Artist: Harry Styles
+Song Title: Sign of the Times
+Preview URL: https://p.scdn.co/mp3-preview/af237206f611b722f48620ece049aff3b8650e77?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Harry Styles
+---------------------------------------
+Artist: MihTy
+Song Title: The Light
+Preview URL not available
+Album Title: The Light
+---------------------------------------
+Artist: Ty Dolla $ign
+Song Title: Or Nah (feat. The Weeknd, Wiz Khalifa and DJ Mustard) - Remix
+Preview URL: https://p.scdn.co/mp3-preview/70f126c139847335bc03c756c55b80c99892268e?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Or Nah (feat. The Weeknd, Wiz Khalifa and DJ Mustard) [Remix Version]
+---------------------------------------
+Artist: Jeremih
+Song Title: Impatient
+Preview URL not available
+Album Title: Late Nights: The Album
+---------------------------------------
+Artist: Harry Styles
+Song Title: Sign of the Times
+Preview URL: https://p.scdn.co/mp3-preview/9801b9239ad1b833f1317574ee55b9d7b8426ff1?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Sign of the Times
+---------------------------------------
+Artist: Mac Miller
+Song Title: Cinderella (feat. Ty Dolla $ign)
+Preview URL: https://p.scdn.co/mp3-preview/1f797d8ec6a6ca7dd84d9a6d496bc92748d24557?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: The Divine Feminine
+---------------------------------------
+Artist: Ace of Base
+Song Title: The Sign
+Preview URL: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: The Sign (US Album) [Remastered]
+---------------------------------------
+Artist: Quality Control
+Song Title: Movin’ Up
+Preview URL not available
+Album Title: Quality Control: Control The Streets Volume 1
+---------------------------------------
+Artist: Ty Dolla $ign
+Song Title: Droptop in the Rain (feat. Tory Lanez)
+Preview URL: https://p.scdn.co/mp3-preview/ffa127c9856a0c60b5fcddf57ead126dfba2d390?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Beach House 3
+---------------------------------------
+Artist: Ty Dolla $ign
+Song Title: Love U Better (feat. Lil Wayne & The-Dream)
+Preview URL: https://p.scdn.co/mp3-preview/8917010fb6f1883ff95e85abf35428d98904f29b?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Beach House 3
+---------------------------------------
+
+spotify-this-song, Uptown Funk
+---------------------------------------
+Artist: Mark Ronson
+Song Title: Uptown Funk
+Preview URL: https://p.scdn.co/mp3-preview/88a794d97fcb4475f72a27be7baf71b94d5a9dda?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Uptown Special
+---------------------------------------
+Artist: Kidz Bop Kids
+Song Title: Uptown Funk
+Preview URL not available
+Album Title: Kidz Bop 28
+---------------------------------------
+Artist: Mark Ronson
+Song Title: Uptown Funk - Will Sparks Remix
+Preview URL: https://p.scdn.co/mp3-preview/cedb00d21cbd8ad842385fe6a079fc7d2b94a0c8?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Uptown Funk (Remixes)
+---------------------------------------
+Artist: Kidz Bop Kids
+Song Title: Uptown Funk
+Preview URL not available
+Album Title: KIDZ BOP Greatest Hits!
+---------------------------------------
+Artist: Mark Ronson
+Song Title: Uptown Funk - Wideboys VIP Remix
+Preview URL: https://p.scdn.co/mp3-preview/c0188251a9f6a9ca04505ae6c8d8005a0ca3ddc9?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Uptown Funk (Remixes)
+---------------------------------------
+Artist: Vitamin String Quartet
+Song Title: Uptown Funk
+Preview URL: https://p.scdn.co/mp3-preview/b80aa683183f31d023a19bc0a2acbd33c3d66ca1?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: VSQ Performs the Hits of 2015, Vol. 1
+---------------------------------------
+Artist: Mark Ronson
+Song Title: Uptown Funk
+Preview URL: https://p.scdn.co/mp3-preview/88a794d97fcb4475f72a27be7baf71b94d5a9dda?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Uptown Funk (Remixes)
+---------------------------------------
+Artist: Rockabye Baby!
+Song Title: Uptown Funk
+Preview URL: https://p.scdn.co/mp3-preview/e364df65cbd48f4d7daec0d054e1ae76a30947a5?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: Lullaby Renditions of Bruno Mars
+---------------------------------------
+Artist: Mark Ronson
+Song Title: Uptown Funk - Radio Edit
+Preview URL: https://p.scdn.co/mp3-preview/52279252cbb38bb5a51fcdd1660d8294a8700417?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: NOW That's What I Call PARTY ANTHEMS 3
+---------------------------------------
+Artist: Mark Ronson
+Song Title: Uptown Funk (feat. Bruno Mars)
+Preview URL: https://p.scdn.co/mp3-preview/476e8d885910655bba1b23b977607bb3d2ebbd9c?cid=0ccac873f49044fb9f82c2d3d3c62a70
+Album Title: 2010s Hits
+---------------------------------------

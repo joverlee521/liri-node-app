@@ -15,6 +15,9 @@ LIRI stands for Language Interpretation and Recognition Interface. It is a comma
             ![movie-this input prompt screenshot](../master/images/movie-this-input-prompt.png)
  
         * If there is no movie name input, the app will default to searching the movie "Mr. Nobody"
+
+            ![move-this default screenshot](../master/images/movie-this-default.png)
+
         * It will return many details about the movie as shown below: 
         
             ![movie-this screenshot](../master/images/movie-this.png)
@@ -32,15 +35,19 @@ LIRI stands for Language Interpretation and Recognition Interface. It is a comma
 
             ![concert-this screenshot](../master/images/concert-this.png)
 
+    * Choose `spotify-this-song` to search the node-spotify-api 
+        * LIRI wil as "Which song do you want to search?":
 
+            ![spotify-this-song prompt screenshot](../master/images/spotify-this-input-prompt.png)
 
-        
-1. `node liri.js spotify-this-song <song title here>`
+        * If there is no song title input, the app will default to searching "The Sign":
 
-    * The app will utilize the node-spotify-api to search for the song specified
-    * If there is no song title input, the app will default to searching the song "The Sign"
-    * It will return the artist, song title, a preview link from Spotify, and the album that the song is from
-    ![spotify-this-song](../master/images/spotify-this-song.png)
+            ![spotify-this-song default screenshot](../master/images/spotify-this-default.png)
+
+        * The app will return data on 10 songs related to your search:
+
+            ![spotify-this-song screenshot](../master/images/spotify-this-song.png)
+
         
 1. `node liri.js do-what-it-says`
 
