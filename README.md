@@ -12,12 +12,12 @@ LIRI stands for Language Interpretation and Recognition Interface. It is a comma
     * Choose `movie-this` to search the OMDb API for details about a specific movie
         * LIRI will then ask "Which movie do you want to search?":
     
-        ![movie-this input prompt screenshot](../master/images/movie-this-input-prompt.png)
+            ![movie-this input prompt screenshot](../master/images/movie-this-input-prompt.png)
  
         * If there is no movie name input, the app will default to searching the movie "Mr. Nobody"
         * It will return many details about the movie as shown below: 
         
-        ![movie-this screenshot](../master/images/movie-this.png)
+            ![movie-this screenshot](../master/images/movie-this.png)
 
 
 
