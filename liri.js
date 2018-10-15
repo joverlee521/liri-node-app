@@ -1,17 +1,20 @@
 // Include all the packages that are necessary for the app
 require("dotenv").config();
 var request = require("request");
+var _ = require("lodash");
 var fs = require("fs");
+var inquirer = require("inquirer");
 var moment = require("moment");
 var Spotify = require("node-spotify-api");
 var keys = require("./keys.js");
 var spotify = new Spotify(keys.spotify);
 
 // Variable declarations
-var command = process.argv[2];
-var input = process.argv.slice(3).join(" ");
+var command;
+var input;
 var output;
 var separator = "---------------------------------------";
+var doThisCommand = false;
 
 // Movie-this function
 function movieThis(input){
@@ -34,7 +37,22 @@ function movieThis(input){
             var title = "Title: " + movie.Title + "\n";
             var year = "Year: " + movie.Year + "\n";
             var imdbRating = "IMDB Rating: " + movie.imdbRating + "\n";
-            var rtRating = "Rotten Tomatoes Rating: " + movie.Ratings[1].Value + "\n";
+            var rottenTomato = "";
+            var rtRating = "";
+            // Testing to see if a Rotten Tomatoes Rating was returned
+            for(var i = 0; i < movie.Ratings.length; i++){
+                if(movie.Ratings[i].Source == "Rotten Tomatoes"){
+                    rottenTomato = movie.Ratings[i].Value;
+                }
+            }
+            // If there is a Rotten Tomatoes Rating, print the rating
+            if(rottenTomato.length > 0){
+                rtRating = "Rotten Tomatoes Rating: " + movie.Ratings[1].Value + "\n";
+            }
+            // If there is not rating, print rating is not available
+            else{
+                rtRating = "Rotten Tomatoes Rating is not available! \n";
+            }
             var country = "Country: " + movie.Country + "\n";
             var language = "Language: " + movie.Language + "\n";
             var plot = "Plot: " + movie.Plot + "\n";
@@ -44,51 +62,58 @@ function movieThis(input){
             logData();
             // Print out the output
             console.log(output);
+            restartPrompt();
         }
     })
 }
 
 // Concert-this function
 function concertThis(input){
-    // If the user does not include an artist name, ask them to enter one
-    if(!process.argv[3]){
-        console.log("Please enter an artist or band name!");
-    }
-    else{
-        var artist = input;
-        // URL for the request module
-        var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
-        request(queryURL, function(error, response, body){
-            if(error){
-                console.log(error);
-            }
-            // Return the data when there is no error and the request was successful
-            else if(!error && response.statusCode === 200){
-                var events = JSON.parse(body);
-                // Loops through all of the events that are returned 
-                for(var i = 0; i < events.length; i ++){
-                    // Grabs the necessary data for the output
-                    var venue = events[i].venue;
-                    var name = "Venue: " + venue.name + "\n";
-                    var venueLocation;
-                    // Some events do not include a region, so only print region if returned from data
-                    if(venue.region !== ""){
-                        venueLocation = "Venue Location: " + venue.city + ", " + venue.region + ", " + venue.country + "\n";
-                    }
-                    else{
-                        venueLocation = "Venue Location: " + venue.city + ", " + venue.country + "\n";
-                    }
-                    // Use Moment to change the format of the event date
-                    var date = "Date of Event: " + moment(events[i].datetime).format("MM/DD/YYYY") + "\n";
-                    output = name + venueLocation  + date + separator;
-                    // Logs the output data into log.txt
-                    logData();
-                    // Prints out the output
-                    console.log(output);
-                }
-            }
+    // Ask user to input artist again if they didn't input one
+    if(input.length === 0){
+        console.log("Please enter an artist name");
+        inputPrompt("artist").then(function(data){
+            input = data;
+            concertThis(input);
         })
     }
+    var artist = input;
+    // URL for the request module
+    var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
+    request(queryURL, function(error, response, body){
+        if(error){
+            console.log(error);
+        }
+        if(_.isEmpty(JSON.parse(body))){
+            console.log("There are no events available!")
+        }
+        // Return the data when there is no error and the request was successful
+        else if(!error && response.statusCode === 200){
+            var events = JSON.parse(body);
+            // Loops through all of the events that are returned 
+            for(var i = 0; i < events.length; i ++){
+                // Grabs the necessary data for the output
+                var venue = events[i].venue;
+                var name = "Venue: " + venue.name + "\n";
+                var venueLocation;
+                // Some events do not include a region, so only print region if returned from data
+                if(venue.region !== ""){
+                    venueLocation = "Venue Location: " + venue.city + ", " + venue.region + ", " + venue.country + "\n";
+                }
+                else{
+                    venueLocation = "Venue Location: " + venue.city + ", " + venue.country + "\n";
+                }
+                // Use Moment to change the format of the event date
+                var date = "Date of Event: " + moment(events[i].datetime).format("MM/DD/YYYY") + "\n";
+                output = name + venueLocation  + date + separator;
+                // Logs the output data into log.txt
+                logData();
+                // Prints out the output
+                console.log(output);
+            }
+            restartPrompt();
+        }
+    })
 }
 
 // Spotify-this-song function
@@ -127,12 +152,14 @@ function spotifyThis(input){
                 // Prints out the output
                 console.log(output);
             }
+            restartPrompt();
         }
     })
 }
 
 // Do-what-it-says function
 function doThis(){
+    logCommand(command, "no input");
     // Uses fs module to read the random.txt file
     fs.readFile("random.txt", "utf8", function(error, data){
         if(error){
@@ -163,6 +190,7 @@ function logCommand(command, input){
 
 // Log Data function
 function logData(){
+    doThisCommand = false;
     // Appends output data into log.txt file
     fs.appendFile("log.txt", output + "\n", function(error){
         if(error){
@@ -171,27 +199,96 @@ function logData(){
     })
 }
 
+// Inquirer prompt to get user input after they choose a command
+function inputPrompt(inputType){
+    return inquirer.prompt([
+        {
+            type: "input",
+            name: "input",
+            message: "Which " + inputType + " do you want to search?"
+        }
+    ]).then(function(data){
+        // Stores user's input 
+        input = data.input;
+        // Logs user's command and input to log.txt
+        logCommand(command, input);
+        return input;
+    })
+}
+
+function restartPrompt(){
+    return inquirer.prompt([
+        {
+            type: "confirm",
+            name: "confirm",
+            message: "Would you like to use another command?",
+            default: false
+        }
+    ]).then(function(data){
+        if(data.confirm){
+            commandPrompt();
+        }
+        else{
+            console.log("Thank you for using LIRI!");
+        }
+    })
+}
+
 // Switch statment for determining function to run based on user's input
-function switchStatement(command, input){
+function switchStatement(command, newInput){
     switch(command){
         case "movie-this":
-            movieThis(input);
+            // Call on prompt to get user input if it is not a do-what-it-says command
+            if(!doThisCommand){
+                inputPrompt("movie").then(function(){
+                    movieThis(input);
+                })
+            }
+            else{
+                movieThis(newInput);
+            }
             break;
         case "concert-this":
-            concertThis(input);
+            if(!doThisCommand){
+                inputPrompt("artist").then(function(){
+                    concertThis(input);
+                })
+            }
+            else{
+                concertThis(newInput);
+            }
             break;
         case "spotify-this-song":
-            spotifyThis(input);
+            if(!doThisCommand){
+                inputPrompt("song").then(function(){
+                    spotifyThis(input);
+                })
+            }
+            else{
+                spotifyThis(newInput);
+            }
             break;
         case "do-what-it-says":
+            doThisCommand = true;
             doThis();
-            break;
-        // If user's command does not match any cases, ask them to enter a correct command
-        default: 
-            console.log("Please enter a correct command!");
             break;
     }
 }
 
-switchStatement(command, input);
-logCommand(command, input);
+function commandPrompt(){
+    // Inquirer prompt to ask user for command
+    return inquirer.prompt([
+        {
+            type: "list",
+            name: "command",
+            message: "Choose a command: ",
+            choices: ["movie-this", "concert-this", "spotify-this-song", "do-what-it-says"]
+        }
+    ]).then(function(data){
+        // Grabs user's choosen command
+        command = data.command;
+        switchStatement(command);
+    })
+}
+
+commandPrompt();
