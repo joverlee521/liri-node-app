@@ -48,10 +48,10 @@ LIRI stands for Language Interpretation and Recognition Interface. It is a comma
 
             ![spotify-this-song screenshot](../master/images/spotify-this-song.png)
 
-        
-1. `node liri.js do-what-it-says`
+    * Choose `do-what-it-says` to run the command that is written in the file [random.txt](../master/random.txt):
 
-    * The app will read the file [random.txt](../master/random.txt) and run the command that written within the file
+        ![do-what-it-says screenshot](../master/images/do-what-it-says.png)
+        
     
 ## Technologies Used
 * JavaScript, Node.js
