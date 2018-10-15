@@ -190,6 +190,7 @@ function logCommand(command, input){
 
 // Log Data function
 function logData(){
+    doThisCommand = false;
     // Appends output data into log.txt file
     fs.appendFile("log.txt", output + "\n", function(error){
         if(error){
