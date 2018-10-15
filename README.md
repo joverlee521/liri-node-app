@@ -4,7 +4,10 @@
 LIRI stands for Language Interpretation and Recognition Interface. It is a command line Node app that takes in certain parameters and returns data to the user.
 
 ## How To Use LIRI
-Navigate to the root of the LIRI app in your terminal and type in one of four commands:
+1. Navigate to the root of the LIRI app in your terminal and type in `node liri.js` to initialize the app
+1. LIRI will as you to choose one of four commands: 
+    ![command prompt screenshot](../master/images/command-prompt.png)
+    
 1. `node liri.js concert-this <artist/band name here>`
 
     * The app will search the Bandsintown API for upcoming events related to the artist specified 
