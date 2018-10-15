@@ -9,3 +9,53 @@ Country: USA
 Language: English, Swahili, Xhosa, Zulu
 Plot: A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.
 Actors: Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings
+
+concert-this, 
+---------------------------------------
+
+concert-this, Bruno Mars
+---------------------------------------
+Venue: American Airlines Center
+Venue Location: Dallas, TX, United States
+Date of Event: 10/15/2018
+---------------------------------------
+Venue: Circuit Of the Americas
+Venue Location: Austin, TX, United States
+Date of Event: 10/20/2018
+---------------------------------------
+Venue: Staples Center
+Venue Location: Los Angeles, CA, United States
+Date of Event: 10/23/2018
+---------------------------------------
+Venue: Staples Center
+Venue Location: Los Angeles, CA, United States
+Date of Event: 10/24/2018
+---------------------------------------
+Venue: Staples Center
+Venue Location: Los Angeles, CA, United States
+Date of Event: 10/26/2018
+---------------------------------------
+Venue: Staples Center
+Venue Location: Los Angeles, CA, United States
+Date of Event: 10/27/2018
+---------------------------------------
+Venue: Aloha Stadium
+Venue Location: Honolulu, HI, United States
+Date of Event: 11/08/2018
+---------------------------------------
+Venue: Aloha Stadium
+Venue Location: Honolulu, HI, United States
+Date of Event: 11/10/2018
+---------------------------------------
+Venue: Aloha Stadium
+Venue Location: Honolulu, HI, United States
+Date of Event: 11/11/2018
+---------------------------------------
+Venue: T-Mobile Arena
+Venue Location: Las Vegas, NV, United States
+Date of Event: 12/30/2018
+---------------------------------------
+Venue: T-Mobile Arena
+Venue Location: Las Vegas, NV, United States
+Date of Event: 12/31/2018
+---------------------------------------

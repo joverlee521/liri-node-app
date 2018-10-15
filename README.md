@@ -10,7 +10,7 @@ LIRI stands for Language Interpretation and Recognition Interface. It is a comma
     ![command prompt screenshot](../master/images/command-prompt.png)
     
     * Choose `movie-this` to search the OMDb API for details about a specific movie
-        * LIRI will then ask "Which movie do you want to search?":
+        * LIRI will ask "Which movie do you want to search?":
     
             ![movie-this input prompt screenshot](../master/images/movie-this-input-prompt.png)
  
@@ -19,16 +19,21 @@ LIRI stands for Language Interpretation and Recognition Interface. It is a comma
         
             ![movie-this screenshot](../master/images/movie-this.png)
 
+    * Choose `concert-this` to search the Bandsintown API for upcoming event related to a specific artist
+        * LIRI will ask "Which artist do you want to search?":
+
+            ![concert-this input prompt screenshot](../master/images/concert-this-input-prompt.png)
+
+        * If there is no artist name input, the app will ask you to input an artist again:
+
+            ![concert-this second input prompt screenshot](../master/images/concert-this-input-again.png)
+        
+        * There is no limit on the number of events returned, the data returned is completely based on the artist searched:
+
+            ![concert-this screenshot](../master/images/concert-this.png)
 
 
 
-
-`node liri.js concert-this <artist/band name here>`
-
-    * The app will search the Bandsintown API for upcoming events related to the artist specified 
-    * It will return the name of the venue, the venue location, and the date of the event 
-    * There is no limit on the number of events returned, the data returned is completely based on the artist searched
-    ![concert-this screenshot](../master/images/concert-this.png)
         
 1. `node liri.js spotify-this-song <song title here>`
 
