@@ -1,6 +1,7 @@
 // Include all the packages that are necessary for the app
 require("dotenv").config();
 var request = require("request");
+var _ = require("lodash");
 var fs = require("fs");
 var inquirer = require("inquirer");
 var moment = require("moment");
@@ -36,7 +37,22 @@ function movieThis(input){
             var title = "Title: " + movie.Title + "\n";
             var year = "Year: " + movie.Year + "\n";
             var imdbRating = "IMDB Rating: " + movie.imdbRating + "\n";
-            var rtRating = "Rotten Tomatoes Rating: " + movie.Ratings[1].Value + "\n";
+            var rottenTomato = "";
+            var rtRating = "";
+            // Testing to see if a Rotten Tomatoes Rating was returned
+            for(var i = 0; i < movie.Ratings.length; i++){
+                if(movie.Ratings[i].Source == "Rotten Tomatoes"){
+                    rottenTomato = movie.Ratings[i].Value;
+                }
+            }
+            // If there is a Rotten Tomatoes Rating, print the rating
+            if(rottenTomato.length > 0){
+                rtRating = "Rotten Tomatoes Rating: " + movie.Ratings[1].Value + "\n";
+            }
+            // If there is not rating, print rating is not available
+            else{
+                rtRating = "Rotten Tomatoes Rating is not available! \n";
+            }
             var country = "Country: " + movie.Country + "\n";
             var language = "Language: " + movie.Language + "\n";
             var plot = "Plot: " + movie.Plot + "\n";
@@ -46,18 +62,30 @@ function movieThis(input){
             logData();
             // Print out the output
             console.log(output);
+            restartPrompt();
         }
     })
 }
 
 // Concert-this function
 function concertThis(input){
+    // Ask user to input artist again if they didn't input one
+    if(input.length === 0){
+        console.log("Please enter an artist name");
+        inputPrompt("artist").then(function(data){
+            input = data;
+            concertThis(input);
+        })
+    }
     var artist = input;
     // URL for the request module
     var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
     request(queryURL, function(error, response, body){
         if(error){
             console.log(error);
+        }
+        if(_.isEmpty(JSON.parse(body))){
+            console.log("There are no events available!")
         }
         // Return the data when there is no error and the request was successful
         else if(!error && response.statusCode === 200){
@@ -83,6 +111,7 @@ function concertThis(input){
                 // Prints out the output
                 console.log(output);
             }
+            restartPrompt();
         }
     })
 }
@@ -123,6 +152,7 @@ function spotifyThis(input){
                 // Prints out the output
                 console.log(output);
             }
+            restartPrompt();
         }
     })
 }
@@ -168,6 +198,7 @@ function logData(){
     })
 }
 
+// Inquirer prompt to get user input after they choose a command
 function inputPrompt(inputType){
     return inquirer.prompt([
         {
@@ -176,8 +207,29 @@ function inputPrompt(inputType){
             message: "Which " + inputType + " do you want to search?"
         }
     ]).then(function(data){
+        // Stores user's input 
         input = data.input;
+        // Logs user's command and input to log.txt
         logCommand(command, input);
+        return input;
+    })
+}
+
+function restartPrompt(){
+    return inquirer.prompt([
+        {
+            type: "confirm",
+            name: "confirm",
+            message: "Would you like to use another command?",
+            default: false
+        }
+    ]).then(function(data){
+        if(data.confirm){
+            commandPrompt();
+        }
+        else{
+            console.log("Thank you for using LIRI!");
+        }
     })
 }
 
@@ -185,6 +237,7 @@ function inputPrompt(inputType){
 function switchStatement(command, newInput){
     switch(command){
         case "movie-this":
+            // Call on prompt to get user input if it is not a do-what-it-says command
             if(!doThisCommand){
                 inputPrompt("movie").then(function(){
                     movieThis(input);
@@ -221,14 +274,20 @@ function switchStatement(command, newInput){
     }
 }
 
-inquirer.prompt([
-    {
-        type: "list",
-        name: "command",
-        message: "Choose a command: ",
-        choices: ["movie-this", "concert-this", "spotify-this-song", "do-what-it-says"]
-    }
-]).then(function(data){
-    command = data.command;
-    switchStatement(command);
-})
+function commandPrompt(){
+    // Inquirer prompt to ask user for command
+    return inquirer.prompt([
+        {
+            type: "list",
+            name: "command",
+            message: "Choose a command: ",
+            choices: ["movie-this", "concert-this", "spotify-this-song", "do-what-it-says"]
+        }
+    ]).then(function(data){
+        // Grabs user's choosen command
+        command = data.command;
+        switchStatement(command);
+    })
+}
+
+commandPrompt();
