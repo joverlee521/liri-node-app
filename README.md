@@ -6,21 +6,29 @@ LIRI stands for Language Interpretation and Recognition Interface. It is a comma
 ## How To Use LIRI
 1. Navigate to the root of the LIRI app in your terminal and type in `node liri.js` to initialize the app
 1. LIRI will as you to choose one of four commands: 
+
     ![command prompt screenshot](../master/images/command-prompt.png)
     
-1. `node liri.js concert-this <artist/band name here>`
+    * Choose `movie-this` to search the OMDb API for details about a specific movie
+        * LIRI will then ask "Which movie do you want to search?":
+    
+        ![movie-this input prompt screenshot](../master/images/movie-this-input-prompt.png)
+ 
+        * If there is no movie name input, the app will default to searching the movie "Mr. Nobody"
+        * It will return many details about the movie as shown below: 
+        
+        ![movie-this screenshot](../master/images/movie-this.png)
+
+
+
+
+
+`node liri.js concert-this <artist/band name here>`
 
     * The app will search the Bandsintown API for upcoming events related to the artist specified 
     * It will return the name of the venue, the venue location, and the date of the event 
     * There is no limit on the number of events returned, the data returned is completely based on the artist searched
     ![concert-this screenshot](../master/images/concert-this.png)
-        
-1. `node liri.js movie-this <movie name here>`
-
-    * The app will search the OMDb API for the movie specified
-    * If there is no movie name input, the app will default to searching the movie "Mr. Nobody"
-    * It will return many details about the movie as shown below: 
-    ![movie-this screenshot](../master/images/movie-this.png)
         
 1. `node liri.js spotify-this-song <song title here>`
 
