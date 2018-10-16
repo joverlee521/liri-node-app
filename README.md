@@ -63,6 +63,8 @@ LIRI stands for Language Interpretation and Recognition Interface. It is a comma
     * Answer "N" to exit the app:
 
         ![restart no screenshot](../master/images/restart-no.png)
+
+1. LIRI logs all commands, inputs and outputs in the file [log.txt](../master/log.txt)
     
 ## Technologies Used
 * JavaScript, Node.js
@@ -72,3 +74,4 @@ LIRI stands for Language Interpretation and Recognition Interface. It is a comma
 * [Node Spotify API](https://www.npmjs.com/package/node-spotify-api)
 * [Moment](https://www.npmjs.com/package/moment)
 * [Dotenv](https://www.npmjs.com/package/dotenv)
+* [Lodash](https://www.npmjs.com/package/lodash)
